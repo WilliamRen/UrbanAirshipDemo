@@ -17,5 +17,7 @@ project/plugins/src_managed/
 */local.properties
 */.settings
 **.log
+*.class
 release.properties
 project.properties
+
