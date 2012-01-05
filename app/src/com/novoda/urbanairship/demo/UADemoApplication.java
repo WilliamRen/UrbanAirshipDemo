@@ -28,7 +28,6 @@ package com.novoda.urbanairship.demo;
 import android.app.Application;
 import android.util.Log;
 
-import com.novoda.urbanairship.test.R;
 import com.urbanairship.AirshipConfigOptions;
 import com.urbanairship.Logger;
 import com.urbanairship.UAirship;

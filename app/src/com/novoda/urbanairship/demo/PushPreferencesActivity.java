@@ -37,7 +37,6 @@ import android.view.Window;
 import android.widget.CheckBox;
 import android.widget.TimePicker;
 
-import com.novoda.urbanairship.test.R;
 import com.urbanairship.analytics.InstrumentedActivity;
 import com.urbanairship.push.PushManager;
 import com.urbanairship.push.PushPreferences;
