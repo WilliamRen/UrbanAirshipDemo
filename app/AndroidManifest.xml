@@ -4,7 +4,7 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="8" />
+    <uses-sdk android:minSdkVersion="15" />
 
     <!-- REQUIRED -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,15 +14,11 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <!-- REQUIRED for C2DM -->
-    <!-- Only this application can receive the messages and registration result -->
-    <!-- MODIFICATION REQUIRED - Replace "com.urbanairship.push.sample" with your package name -->
     <permission
         android:name="com.novoda.urbanairship.demo.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
     <uses-permission android:name="com.novoda.urbanairship.demo.permission.C2D_MESSAGE" />
-    <!-- This app has permission to register and receive message -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <application
@@ -43,17 +39,13 @@
         
         <activity android:name="com.novoda.urbanairship.demo.PushPreferencesActivity" />
 
-        <!-- REQUIRED -->
         <receiver android:name="com.urbanairship.CoreReceiver" >
-
-            <!-- REQUIRED IntentFilter - For Helium and Hybrid -->
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.ACTION_SHUTDOWN" />
             </intent-filter>
         </receiver>
 
-        <!-- REQUIRED for C2DM and Hybrid -->
         <receiver
             android:name="com.urbanairship.push.c2dm.C2DMPushReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
@@ -61,29 +53,19 @@
             <!-- Receive the actual message -->
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <!-- MODIFICATION REQUIRED - Use your package name as the category -->
                 <category android:name="com.novoda.urbanairship.demo" />
             </intent-filter>
             <!-- Receive the registration id -->
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-                <!-- MODIFICATION REQUIRED - Use your package name as the category -->
                 <category android:name="com.novoda.urbanairship.demo" />
             </intent-filter>
         </receiver>
 
-        <!-- REQUIRED -->
-        <!--
-             The 'android:process' parameter is optional. Set it to a value starting
-            with a colon (:) to make it run in a separate,
-            private process
-        -->
         <service
             android:name="com.urbanairship.push.PushService"
             android:process=":com.urbanairship.push.process" />
 
-        <!-- OPTIONAL, if you want to receive push, push opened and registration completed intents -->
-        <!-- Replace the receiver below with your package and class name -->
         <receiver android:name="com.novoda.urbanairship.demo.IntentReceiver" />
     </application>
 
