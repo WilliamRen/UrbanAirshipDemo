@@ -42,12 +42,13 @@ public class UADemoApplication extends Application {
         super.onCreate();
         
         AirshipConfigOptions options = AirshipConfigOptions.loadDefaultOptions(this);
-
+/*
         // Optionally, customize your config at runtime:
         //
          options.inProduction = false;
          options.developmentAppKey = "eYhRyqBFT8GckDWywDgqzQ";
-         options.developmentAppSecret = "kSFFVVBgQjaNUCUjjNu7tw";
+         options.developmentAppSecret = "kSFFVVBgQjaNUCUjjNu7tw";*/
+
 
         UAirship.takeOff(this, options);
         Logger.logLevel = Log.VERBOSE;
