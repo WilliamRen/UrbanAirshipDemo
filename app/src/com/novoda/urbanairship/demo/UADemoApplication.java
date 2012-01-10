@@ -49,7 +49,7 @@ public class UADemoApplication extends Application {
          options.developmentAppKey = "eYhRyqBFT8GckDWywDgqzQ";
          options.developmentAppSecret = "kSFFVVBgQjaNUCUjjNu7tw";
          options.transport = "hybrid";//"helium";
-         options.c2dmSender = "akshay@novoda.com";
+         options.c2dmSender = "akshaydashrath@gmail.com";
          options.analyticsEnabled = false;
                 
 
